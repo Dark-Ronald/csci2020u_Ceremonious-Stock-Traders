@@ -1,0 +1,38 @@
+apply plugin: 'java'
+
+repositories {
+	mavenCentral()
+	//flatDir dirs: '/home/pwner/Documents/Uoit/"Year 3 Semester 2"/csci2020u/proguard5.3.3/lib'
+}
+
+dependencies {
+	//compile group: 'commons-csv',
+	//name: 'commons-csv',
+	//version: '1.5'
+	compile 'org.apache.commons:commons-csv:1.5'
+	//classpath ':proguard'
+}
+
+version = '1.0'
+jar {
+	manifest {
+		attributes 'Main-Class': 'CVSDemo',
+			//'Implementation-Title': 'CVSDemo',
+			'Implementation-Version': version
+	}
+}
+
+
+//task(run, dependsOn: 'classes', type: JavaExec) {
+task(run, type: JavaExec) {
+	main = 'CSVDemo'
+	classpath = sourceSets.main.runtimeClasspath
+}
+/*
+task (minify, type: proguard.gradle.ProGuardTask) {
+	configuration 'proguard.cfg'
+	
+	injars 'build/libs/CVSDemo-1.0.jar'
+	outjars 'build/libs/CVSDemo-1.0.min.jar'
+}
+*/
