@@ -1,1 +1,20 @@
 apply plugin: 'java'
+
+repositories {
+	mavenCentral()
+	
+}
+
+dependencies {
+	//compile group: 'commons-csv',
+	//name: 'commons-csv',
+	//version: '1.5'
+	compile 'org.apache.commons:commons-csv:1.5'
+}
+
+/*
+task(run, dependsOn: 'classes', type: JavaExec) {
+	main = 'CSVDemo'
+	classpath = sourceSets.main.runtimeClasspath
+}
+*/
